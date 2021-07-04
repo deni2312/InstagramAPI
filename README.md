@@ -71,8 +71,6 @@ Change vcpkgdirectory with the relative or absolute path of vcpkg
 ```c++
 #include "include/Instagram.h"
 
-using namespace std;
-
 int main()
 {
 	Instagram instagram("username", "password");
