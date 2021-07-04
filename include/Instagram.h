@@ -32,10 +32,10 @@ public:
 	Json::Value get_user_followers(const std::string& user_id);
 	Json::Value get_user_feed(const std::string& user_id);
 	Json::Value search_username(const std::string& username);
-	virtual ~Instagram() noexcept;
+	~Instagram();
 private:
-	struct Data;
-	std::unique_ptr<Data> data;
+	std::string username;
+	std::string password;
 	std::unique_ptr<Network> network;
 };
 #endif
