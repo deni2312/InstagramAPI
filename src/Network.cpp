@@ -1,0 +1,55 @@
+#include "..\include\Network.h"
+
+
+struct Network::Error : public std::exception {
+	Error(std::string error_code) :message{ error_code } {};
+	const char* what() const noexcept override {
+		return message.c_str();
+	}
+private:
+	std::string message;
+};
+
+Network::Network(const std::string& request) :request{request}
+{
+	cpr::Header header1;
+	header1.insert({ "Content-type" ," application/x-www-form-urlencoded; charset=UTF-8" });
+	header1.insert({ "User-Agent" , "Instagram 26.0.0.10.86 Android (24/7.0; 640dpi; 1440x2560; HUAWEI; LON-L29; HWLON; hi3660; en_US)" });
+	session.SetHeader(header1);
+}
+
+Json::Value Network::sendRequestPost(const std::string& requ, const std::string& body)
+{
+	cpr::Response response;
+	session.SetUrl({ request + requ });
+	session.SetBody({ body });
+	response = session.Post();
+	int code;
+	code = response.status_code;
+	if (code != 200) {
+		throw Error{ std::to_string(code) };
+	}
+	session.SetBody({ "" });
+	Json::Reader read;
+	Json::Value value;
+	read.parse(response.text, value);
+	return value;
+}
+
+Json::Value Network::sendRequestGet(const std::string& requ,const std::string& body)
+{
+	cpr::Response response;
+	session.SetUrl({ request + requ });
+	session.SetBody({ body });
+	response = session.Get();
+	int code;
+	code = response.status_code;
+	if (code != 200) {
+		throw Error{ std::to_string(code) };
+	}
+	session.SetBody({ "" });
+	Json::Reader read;
+	Json::Value value;
+	read.parse(response.text, value);
+	return value;
+}
