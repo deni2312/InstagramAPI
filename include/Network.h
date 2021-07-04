@@ -1,7 +1,11 @@
 #pragma once
 #include <string>
 #include <cpr/cpr.h>
-#include <json/json.h>
+#ifdef _WIN32
+	#include <json/json.h>
+#else
+	#include <jsoncpp/json/json.h>
+#endif
 class Network {
 public:
 	Network(const std::string& request);
