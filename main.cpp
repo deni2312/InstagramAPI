@@ -1,7 +1,5 @@
 #include "include/Instagram.h"
 
-using namespace std;
-
 int main()
 {
 	Instagram instagram("username", "password");
