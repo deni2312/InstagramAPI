@@ -1,0 +1,6 @@
+cmake_minimum_required (VERSION 3.8)
+project("InstagramAPI")
+find_package(cpr CONFIG REQUIRED)
+find_package(jsoncpp CONFIG REQUIRED)
+add_executable (Instagram "Instagram.cpp" "include/Instagram.h" "src/Instagram.cpp" "include/Network.h" "src/Network.cpp")
+target_link_libraries(Instagram PRIVATE jsoncpp_lib jsoncpp_object cpr)
