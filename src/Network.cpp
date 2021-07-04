@@ -1,14 +1,7 @@
 #include "..\include\Network.h"
 
 
-struct Network::Error : public std::exception {
-	Error(std::string error_code) :message{ error_code } {};
-	const char* what() const noexcept override {
-		return message.c_str();
-	}
-private:
-	std::string message;
-};
+
 
 Network::Network(const std::string& request) :request{request}
 {
@@ -52,4 +45,13 @@ Json::Value Network::sendRequestGet(const std::string& requ,const std::string& b
 	Json::Value value;
 	read.parse(response.text, value);
 	return value;
+}
+
+Network::Error::Error(std::string error_code) :message{ error_code }
+{
+}
+
+const char* Network::Error::what() const noexcept
+{
+	return message.c_str();
 }
