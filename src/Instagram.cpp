@@ -1,20 +1,12 @@
 #include "../include/Instagram.h"
 
-
-struct Instagram::Data {
-	std::string username;
-	std::string password;
-};
-
-Instagram::Instagram(std::string username, std::string password) :data{std::make_unique<Data>()}, network{ std::make_unique<Network>("https://i.instagram.com/api/v1/") }
+Instagram::Instagram(std::string username, std::string password) :username{ username }, password{ password }, network{std::make_unique<Network>("https://i.instagram.com/api/v1/")}
 {
-	data->username = username;
-	data->password = password;
 }
 
 void Instagram::login()
 {
-	network->sendRequestPost("accounts/login/", "ig_sig_key_version=4&signed_body=67d69889a0c11fc7c51c4fb8d997fc87b62e95d16cf21f5d9993590011bc791d.{\"phone_id\": \"1234\", \"device_id\": \"android - 36c34ce3ee48d07c\", \"guid\": \"1234\", \"username\": \"" + data->username + "\", \"password\": \"" + data->password + "\"}");
+	network->sendRequestPost("accounts/login/", "ig_sig_key_version=4&signed_body=67d69889a0c11fc7c51c4fb8d997fc87b62e95d16cf21f5d9993590011bc791d.{\"phone_id\": \"1234\", \"device_id\": \"android - 36c34ce3ee48d07c\", \"guid\": \"1234\", \"username\": \"" + username + "\", \"password\": \"" + password + "\"}");
 }
 
 Json::Value Instagram::remove_profile_picture()
@@ -132,4 +124,6 @@ Json::Value Instagram::search_username(const std::string& username)
 	return network->sendRequestGet("users/" + username+"/usernameinfo/");
 }
 
-Instagram::~Instagram() noexcept = default;
+Instagram::~Instagram()
+{
+}
