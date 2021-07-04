@@ -60,7 +60,7 @@ cd build
 cmake -B build/ -S . -DCMAKE_TOOLCHAIN_FILE=vcpkgdirectory/scripts/buildsystems/vcpkg.cmake
 cd build
 cmake --build .
-./InstagramAPI
+./Instagram
 ```  
 Change vcpkgdirectory with the relative or absolute path of vcpkg  
 
