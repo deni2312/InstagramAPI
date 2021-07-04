@@ -53,7 +53,6 @@ With CMake:
 ```bash
 cd InstagramAPI
 mkdir build
-cd build
 cmake -B build/ -S . -DCMAKE_TOOLCHAIN_FILE=vcpkgdirectory/scripts/buildsystems/vcpkg.cmake
 cd build
 cmake --build .
