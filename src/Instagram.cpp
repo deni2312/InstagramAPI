@@ -1,4 +1,4 @@
-#include "..\include\Instagram.h"
+#include "../include/Instagram.h"
 
 Instagram::Instagram(std::string username, std::string password) :username{ username }, password{ password }, network{std::make_unique<Network>("https://i.instagram.com/api/v1/")}
 {
