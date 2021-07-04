@@ -6,6 +6,7 @@
 #else
 	#include <jsoncpp/json/json.h>
 #endif
+
 class Network {
 public:
 	Network(const std::string& request);
