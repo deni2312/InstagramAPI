@@ -73,7 +73,7 @@ Change vcpkgdirectory with the relative or absolute path of vcpkg
 
 int main()
 {
-	Instagram instagram("username", "password");
+	Instagram instagram{"username", "password"};
 	try {
 		instagram.login();
 	}
