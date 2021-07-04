@@ -32,7 +32,7 @@ vcpkg integrate install
 
 * Clone the repository  
 ```bash
-git clone https://github.com/deni2312/Telegram-Bot-Api-Cpp.git
+git clone https://github.com/deni2312/InstagramAPI.git
 ```  
 
 * Open CMakeFile on Visual Studio  
