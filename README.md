@@ -1,7 +1,4 @@
-
 #  C++ Instagram API
-
-
 
 <p align="left">A header-only version of Instagram Private API in C++
   
