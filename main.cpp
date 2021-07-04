@@ -4,7 +4,7 @@ int main()
 {
 	Instagram instagram{"username", "password"};
 	try{
-	instagram.login();
+		instagram.login();
 	}catch(Network::Error& e){
 		std::cerr<<e.what();
 	}
