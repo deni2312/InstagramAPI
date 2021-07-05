@@ -1,14 +1,9 @@
 #ifndef INSTAGRAM_NETWORK
 #define INSTAGRAM_NETWORK
-#include <string>
 #include <cpr/cpr.h>
-#ifdef _WIN32
-	#include <json/json.h>
-#else
-	#include <jsoncpp/json/json.h>
-#endif
+#include "NetworkInterface.h"
 
-class Network {
+class Network : public NetworkInterface{
 public:
 	Network(const std::string& request);
 	Json::Value sendRequestGet(const std::string& requ,const std::string& body="");
