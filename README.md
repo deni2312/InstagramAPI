@@ -1,6 +1,7 @@
 #  C++ Instagram API
 
 <p align="left">A header-only version of Instagram Private API in C++
+
   * [Getting started.](#getting-started)
   * [Writing your first bot](#writing-your-first-bot)
   * [General API Documentation](#general-api-documentation)
