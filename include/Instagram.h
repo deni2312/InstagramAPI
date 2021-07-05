@@ -1,13 +1,12 @@
 #ifndef INSTAGRAM_H
 #define INSTAGRAM_H
-#include <string>
 #include <iostream>
 #include <exception>
 #include "Network.h"
 #include <memory>
 class Instagram {
 public:
-	Instagram(std::string username,std::string password);
+	Instagram(const std::string& username,const std::string& password);
 	void login();
 	Json::Value remove_profile_picture();
 	Json::Value set_private();
@@ -34,8 +33,8 @@ public:
 	Json::Value search_username(const std::string& username);
 	~Instagram();
 private:
-	std::string username;
-	std::string password;
-	std::unique_ptr<Network> network;
+	struct Data;
+	std::unique_ptr<Data> data;
+	std::unique_ptr<NetworkInterface> network;
 };
 #endif
