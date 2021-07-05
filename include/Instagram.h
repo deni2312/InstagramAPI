@@ -11,7 +11,6 @@ public:
 	Json::Value remove_profile_picture();
 	Json::Value set_private();
 	Json::Value set_public();
-	Json::Value discover();
 	Json::Value follow(const std::string& user_id);
 	Json::Value unfollow(const std::string& user_id);
 	Json::Value block(const std::string& user_id);

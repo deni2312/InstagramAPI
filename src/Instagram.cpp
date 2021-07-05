@@ -34,11 +34,6 @@ Json::Value Instagram::set_public()
 	return network->sendRequestPost("accounts/set_public/");
 }
 
-Json::Value Instagram::discover()
-{
-	return network->sendRequestPost("discover/");
-}
-
 Json::Value Instagram::follow(const std::string& user_id)
 {
 	return network->sendRequestPost("friendships/create/"+user_id+"/", data->base+"{\"_uuid\": \"3a12620f-332a-4393-8cdc-6ae15c039dfd\", \"_uid\": 44502302651, \"user_id\": \"" + user_id + "\"}");
@@ -66,7 +61,7 @@ Json::Value Instagram::unblock(const std::string& user_id)
 
 Json::Value Instagram::show(const std::string& user_id)
 {
-	return network->sendRequestPost("friendships/show/" + user_id + "/", data->base+"{\"_uuid\": \"3a12620f-332a-4393-8cdc-6ae15c039dfd\", \"_uid\": 44502302651, \"user_id\": \"" + user_id + "\"}");
+	return network->sendRequestGet("friendships/show/" + user_id + "/", data->base+"{\"_uuid\": \"3a12620f-332a-4393-8cdc-6ae15c039dfd\", \"_uid\": 44502302651, \"user_id\": \"" + user_id + "\"}");
 }
 
 Json::Value Instagram::comment_like(const std::string& comment_id)
