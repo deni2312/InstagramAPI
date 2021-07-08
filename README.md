@@ -69,7 +69,7 @@ int main()
 
 ### Usage
 
-All the operations that contains information returned by Instagram are typed.
+All the operations that contains information returned by Instagram are typed.  
 This implementation has all basic methods, here a list of them:  
 ```c++
 	void login();
