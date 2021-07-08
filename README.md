@@ -19,38 +19,17 @@
 <h2> Steps </h2>
 
 This API is tested with C++ 14, on linux g++ and on Visual Studio 2017/2019.
- 
-### Windows
-
-* Install dependencies with VCPKG  
- ```bash
-git clone https://github.com/Microsoft/vcpkg.git
-cd vcpkg
-bootstrap-vcpkg.bat
-vcpkg install jsoncpp
-vcpkg install cpr
-vcpkg integrate install
-```  
-
-* Clone the repository  
-```bash
-git clone https://github.com/deni2312/InstagramAPI.git
-```  
-
-* Open CMakeFile on Visual Studio  
-Files->Open->CMake->Instagram Directory
-
 
 ### Linux 
 Install on linux with vcpkg:  
   * Dependencies
-    * Jsoncpp
+    * nlohmann-json
     * cpr  
 ```bash
 git clone https://github.com/Microsoft/vcpkg.git
 cd vcpkg
 ./bootstrap-vcpkg.sh
-./vcpkg install jsoncpp
+./vcpkg install nlohmann-json
 ./vcpkg install cpr
 ./vcpkg integrate install
 ```  
@@ -91,6 +70,23 @@ int main()
 ### Usage
 
 All the operations returns a `Json::Value` that contains all informations about the request.  
+There's a example:  
+```c++
+#include "include/Instagram.h"
+
+int main()
+{
+	Instagram instagram{"username", "password"};
+	try {
+		instagram.login();
+	}
+	catch (Network::Error& e) {
+		std::cerr << e.what();
+	}
+}
+
+
+```
 
 ### Error Handling
 
