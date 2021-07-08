@@ -18,7 +18,7 @@
 
 <h2> Steps </h2>
 
-This API is tested with C++ 14, on linux g++ and on Visual Studio 2017/2019.
+This API is tested with C++ 14, on linux g++.
 
 ### Linux 
 Install on linux with vcpkg:  
