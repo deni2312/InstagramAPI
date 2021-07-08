@@ -80,7 +80,7 @@ int main()
 ### Usage
 
 All the operations that contains information returned by Instagram are typed.  
-This implementation has all basic methods, here a list of them:  
+This implementation has all basic methods, here's a list of them:  
 ```c++
 	void login();
 	void remove_profile_picture();
