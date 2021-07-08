@@ -11,7 +11,7 @@ Network::Network(const std::string& request) :request{request}
 	session.SetHeader(header1);
 }
 
-Json::Value Network::sendRequestPost(const std::string& requ, const std::string& body)
+std::string Network::sendRequestPost(const std::string& requ, const std::string& body)
 {
 	cpr::Response response;
 	session.SetUrl({ request + requ });
@@ -23,13 +23,10 @@ Json::Value Network::sendRequestPost(const std::string& requ, const std::string&
 		throw Error{ std::to_string(code) };
 	}
 	session.SetBody({ "" });
-	Json::Reader read;
-	Json::Value value;
-	read.parse(response.text, value);
-	return value;
+	return response.text;
 }
 
-Json::Value Network::sendRequestGet(const std::string& requ,const std::string& body)
+std::string Network::sendRequestGet(const std::string& requ,const std::string& body)
 {
 	cpr::Response response;
 	session.SetUrl({ request + requ });
@@ -41,10 +38,7 @@ Json::Value Network::sendRequestGet(const std::string& requ,const std::string& b
 		throw Error{ std::to_string(code) };
 	}
 	session.SetBody({ "" });
-	Json::Reader read;
-	Json::Value value;
-	read.parse(response.text, value);
-	return value;
+	return response.text;
 }
 
 Network::Error::Error(std::string error_code) :message{ error_code }
