@@ -141,7 +141,6 @@ int main()
 
 
 ```
-
 ### Error Handling
 
 To handle errors you only need to catch `Network::Error &e` and the output of `e.what()` will be the JSON error returned by instagram.
