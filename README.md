@@ -28,7 +28,7 @@
 
 <h2> Steps </h2>
 
-This API is tested with C++ 14, on linux g++.
+This API is tested with C++ 17, on linux g++.
 
 ### Linux 
 Install on linux with vcpkg:  
