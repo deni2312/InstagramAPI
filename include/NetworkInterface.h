@@ -5,6 +5,7 @@
 #include "types/UserListRequestFollow.h"
 #include "types/UserFeedRequest.h"
 #include "types/UserCommentsRequest.h"
+#include "types/LoginRequest.h"
 #include <string>
 class NetworkInterface {
 public:

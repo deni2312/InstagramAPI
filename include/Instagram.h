@@ -3,6 +3,7 @@
 #include <exception>
 #include "Network.h"
 #include <memory>
+#include <random>
 class Instagram {
 public:
 	Instagram(const std::string& username,const std::string& password);
@@ -30,5 +31,6 @@ private:
 	struct Data;
 	std::unique_ptr<Data> data;
 	std::unique_ptr<NetworkInterface> network;
+	std::string uuid_generator();
 };
 #endif
