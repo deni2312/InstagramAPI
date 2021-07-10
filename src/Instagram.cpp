@@ -126,7 +126,6 @@ const std::string Instagram::uuid_generator() const{
         res += v[dist(rng)];
     }
     return res;
-	
 }
 
 Instagram::~Instagram()
