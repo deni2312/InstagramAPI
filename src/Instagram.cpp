@@ -110,7 +110,7 @@ IgTypes::UserRequest Instagram::search_username(const std::string& username)
 	return IgTypes::json::parse(network->sendRequestGet("users/" + username + "/usernameinfo/"));
 }
 
-std::string Instagram::uuid_generator(){
+const std::string Instagram::uuid_generator() const{
     static std::random_device dev;
     static std::mt19937 rng(dev());
 
