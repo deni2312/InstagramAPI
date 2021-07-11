@@ -27,6 +27,7 @@ public:
 	IgTypes::UserListRequestFollow get_user_followers(const std::string& user_id);
 	IgTypes::UserFeedRequest get_user_feed(const std::string& user_id);
 	IgTypes::UserRequest search_username(const std::string& username);
+	void setProxy(const std::string& type,const std::string& address);
 	~Instagram();
 private:
 	struct Data;

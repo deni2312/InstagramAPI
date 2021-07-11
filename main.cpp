@@ -38,4 +38,6 @@ int main()
 	}
 	//Follow user
 	instagram.follow(std::to_string(user_id));
+	//Set proxy, type would be http or https
+	instagram.setProxy("http","proxy.com");
 }

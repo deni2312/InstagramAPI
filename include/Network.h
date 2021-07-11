@@ -8,6 +8,7 @@ public:
 	Network(const std::string& request);
 	std::string sendRequestGet(const std::string& requ,const std::string& body="");
 	std::string sendRequestPost(const std::string& requ, const std::string& body = "");
+	void setProxy(const std::string& type,const std::string& address);
 	struct Error : public std::exception{
 		Error(std::string error_code);
 		const char* what() const noexcept override;

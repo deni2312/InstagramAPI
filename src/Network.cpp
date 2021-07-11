@@ -41,6 +41,11 @@ std::string Network::sendRequestGet(const std::string& requ,const std::string& b
 	return response.text;
 }
 
+void Network::setProxy(const std::string& type,const std::string& address){
+	session.SetProxies({{type,address}});
+}
+
+
 Network::Error::Error(std::string error_code) :message{ error_code }
 {
 }

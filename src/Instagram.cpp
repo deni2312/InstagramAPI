@@ -128,6 +128,11 @@ const std::string Instagram::uuid_generator() const{
     return res;
 }
 
+void Instagram::setProxy(const std::string& type,const std::string& address){
+	network->setProxy(type,address);
+}
+
+
 Instagram::~Instagram()
 {
 }
