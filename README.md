@@ -117,7 +117,8 @@ int main()
 	Instagram instagram{"username", "password"};
 	try{
 		instagram.login();
-	}catch(Network::Error& e){
+	}
+	catch(Network::Error& e){
 		std::cerr<<e.what();
 	}
 	//Get user id
